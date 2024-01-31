@@ -1,7 +1,7 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { bugProps } from "../../types/types";
 import { db } from "../../config/firebase";
-import { deleteDoc, doc, updateDoc } from "firebase/firestore";
+import { deleteDoc, doc } from "firebase/firestore";
 
 import {
   Box,
@@ -21,17 +21,17 @@ const Bug = (bug: bugProps) => {
     await deleteDoc(bugDocRef);
   };
 
-  const updateBugTitle = async (id: string) => {
-    const bugDocRef = doc(db, "bugs", id);
-    await updateDoc(bugDocRef, { title: updatedTitle });
-  };
+  // const updateBugTitle = async (id: string) => {
+  //   const bugDocRef = doc(db, "bugs", id);
+  //   await updateDoc(bugDocRef, { title: updatedTitle });
+  // };
 
-  const updateBugCheck = async (id: string) => {
-    const bugDocRef = doc(db, "bugs", id);
-    await updateDoc(bugDocRef, { fixed: true })
-  }
+  // const updateBugCheck = async (id: string) => {
+  //   const bugDocRef = doc(db, "bugs", id);
+  //   await updateDoc(bugDocRef, { fixed: true })
+  // }
 
-  const [updatedTitle, setUpdatedTitle] = useState<string>("");
+  // const [updatedTitle, setUpdatedTitle] = useState<string>("");
 
   return (
     <Box >
